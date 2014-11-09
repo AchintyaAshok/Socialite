@@ -1,0 +1,2 @@
+module ApplicationNavigatorHelper
+end
