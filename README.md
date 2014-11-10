@@ -10,6 +10,7 @@
 
 ## Usage
 1. Run the rails server by running the command: "rails s" or "rails server" after navigating to the application folder.
+
 ### Available Routes
 - Check out the routes.rb file to understand what currently available routes are for the application
 - When you navigate to the server it will open up the index template for the application_navigator controller
