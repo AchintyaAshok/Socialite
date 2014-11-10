@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'home' => 'application_navigator#index'
   get 'events' => 'events#index'
   get 'events/:id' => 'events#show'
-  get 'events/search/:searchString' => 'events#search'
+  get 'events/search/:searchString' => 'events#search' # allows searching by a string for events
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
