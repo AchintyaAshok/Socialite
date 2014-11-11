@@ -19,4 +19,8 @@
 	- {server_root}/events/:id (search for an event by providing its id number)
 	- {server_root}/events/search/:search_string (search for an event using some keywords)
 
+<<<<<<< HEAD
 TESTING AARTI
+=======
+	TENACIUS V WAS HUR
+>>>>>>> tanay_code
