@@ -3,14 +3,14 @@
 
 // Declare app level module which depends on filters, and services
 
-var indexModule = angular.module('SocialiteApp', [
+var eventModule = angular.module('getEvent', [
 	'ngRoute',
-	'socialiteControllers'
+	'getEventControllers'
 ]);
 
-indexModule.config(['$routeProvider', 
+eventModule.config(['$routeProvider', 
 	function($routeProvider){
-		$routeProvider.when("/home", {
+		$routeProvider.when("/", {
 			templateUrl: '../templates/homepage.html',
 			controller: 'HomepageController'
 		});
@@ -20,3 +20,4 @@ indexModule.config(['$routeProvider',
 		});
 	}
 ]);
+

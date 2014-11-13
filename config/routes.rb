@@ -5,9 +5,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'application_navigator#index'
   get 'home' => 'application_navigator#index'
-  get 'events' => 'events#index'
-  get 'events/:id' => 'events#show'
-  get 'events/search/:searchString' => 'events#search' # allows searching by a string for events
+  get 'events/:id' => 'application_navigator#getEvent'
+  # api calls
+  get 'api/events' => 'events#index'
+  get 'api/events/:id' => 'events#show'
+  get 'api/events/search/:searchString' => 'events#search' # allows searching by a string for events
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,10 +1,12 @@
 class EventsController < ApplicationController
 	def index
-		@events = Events.all
+		#@events = Events.all
+		@events = Events.find_by_sql "SELECT * FROM events"
 		render json: @events
 	end
 	def show
-		@event = Events.find(params[:id])
+		#@event = Events.find(params[:id])
+		@event = Events.find_by_sql ["SELECT * FROM events WHERE id = ? ", params[:id]]
 		render json: @event
 	end
 	def search
