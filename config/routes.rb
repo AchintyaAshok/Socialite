@@ -11,6 +11,13 @@ Rails.application.routes.draw do
   get 'api/events/:id' => 'events#show'
   get 'api/events/search/:searchString' => 'events#search' # allows searching by a string for events
 
+  #yelp api calls
+  get 'yelp/search/:lat/:long' => 'application#searchByLatLong', :lat => /.*/, :long => /.*/
+  get 'yelp/search/:id' => 'application#searchById'
+  
+  get 'yelp/searchExact/:exactLocation' => 'application#searchByExact'
+  get 'yelp/searchTerm/:term/:lat/:long' => 'application#searchByTerm', :lat => /.*/, :long => /.*/
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
