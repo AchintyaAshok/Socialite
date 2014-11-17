@@ -59,3 +59,44 @@ e6 = Events.create!(
 	ends: DateTime.new(2014, 11, 9, 13, 0)
 )
 e6.save!
+
+# Creating some Dummy Users
+aarti = Users.create!(
+	first_name: "Aarti",
+	last_name: "Patel",
+	username: "aartipaty",
+	email: "aartipaarty@socialite.com"
+)
+aarti.save!
+
+achintya = Users.create!(
+	first_name: "Achintya",
+	last_name: "Ashok",
+	username: "KingChintz",
+	email: "kingchintz@sociliate.com"
+)
+achintya.save!
+
+abhishek = Users.create!(
+	first_name: "Abhishek",
+	last_name: "Sharma",
+	username: "Abhishek",
+	email: "abhishek@socialite.com"
+)
+abhishek.save!
+
+tanay = Users.create!(
+	first_name: "Tanay",
+	last_name: "Ved",
+	username: "tanuved",
+	email: "tanuved@socialite.com"
+)
+tanay.save!
+
+vincent = Users.create!(
+	first_name: "Vincent",
+	last_name: "Fong",
+	username: "vincenzo",
+	email: "vincenzo@socialite.com"
+)
+vincent.save!
