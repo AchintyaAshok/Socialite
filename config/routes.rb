@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   
   get 'yelp/searchExact/:exactLocation' => 'application#searchByExact'
   get 'yelp/searchTerm/:term/:lat/:long' => 'application#searchByTerm', :lat => /.*/, :long => /.*/
-
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
