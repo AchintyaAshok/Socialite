@@ -19,9 +19,18 @@
 - To go to an event:
 	- {server_root}/events/:id
 - When you navigate to the server it will open up the index template for the application_navigator controller
+<<<<<<< HEAD
+- Other routes to check out include:
+	- {server_root}/events (look up all available events)
+	- {server_root}/events/:id (search for an event by providing its id number)
+	- {server_root}/events/search/:search_string (search for an event using some keywords)
+
+	TENACIUS V WAS HUR
+=======
 - Routes:
 	- {server_root}/api/events (look up all available events)
 	- {server_root}/api/events/:id (search for an event by providing its id number)
 	- {server_root}/api/events/search/:search_string (search for an event using some keywords)
 
 ADDED GIT SUB MASTER
+>>>>>>> sub_master
