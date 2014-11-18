@@ -10,4 +10,7 @@ class ApplicationNavigatorController < ApplicationController
 		end
 		puts "This is the id passed in -> ", id
 	end
+
+	def about
+	end
 end
