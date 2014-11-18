@@ -6,11 +6,24 @@ Rails.application.routes.draw do
   root 'application_navigator#index'
   get 'home' => 'application_navigator#index'
   get 'events/:id' => 'application_navigator#getEvent'
-  # api calls
+  get 'about' => 'application_navigator#about'
+  # API calls
+  ## Events
   get 'api/events' => 'events#index'
   get 'api/events/:id' => 'events#show'
   get 'api/events/search/:searchString' => 'events#search' # allows searching by a string for events
+  ## Users
+  get 'api/users' => 'users#index'
+  get 'api/users/:id' => 'users#show'
+  get 'api/users/search/:searchString' => 'users#search'
 
+  #yelp api calls
+  get 'yelp/search/:lat/:long' => 'application#searchByLatLong', :lat => /.*/, :long => /.*/
+  get 'yelp/search/:id' => 'application#searchById'
+  
+  get 'yelp/searchExact/:exactLocation' => 'application#searchByExact'
+  get 'yelp/searchTerm/:term/:lat/:long' => 'application#searchByTerm', :lat => /.*/, :long => /.*/
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
