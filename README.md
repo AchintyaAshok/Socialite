@@ -29,3 +29,5 @@
 	- {server_root}/api/users/:id -- Get a User by his/her id
 	- {server_root}/api/users/search/:search_string -- Get a User by searching by username
 	- {server_root}/api/users/:id/events -- Get all the events the user is following/going to
+	- {server_root}/api/users/:id/events/following -- All the events being followed for user
+	- {server_root}/api/users/:id/events/goingto -- All the events user is going to 

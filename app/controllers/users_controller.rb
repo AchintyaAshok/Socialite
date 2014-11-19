@@ -28,7 +28,9 @@ class UsersController < ApplicationController
 
 	'''
 		Input: ID of the user in params[:id]
-		Output: The list of all the events that this user is following or is going to.
+		Output: JSON list of event ids
+
+		Method that gets all followed and events that the user is going to.
 	'''
 	def getEvents
 		userID = Users.find(params[:id]).id
@@ -36,8 +38,28 @@ class UsersController < ApplicationController
 		render json: @userEvents
 	end
 
-	def testGetAllUserEvents
-		@allEvents = UserEvents.find_by_sql "SELECT * FROM user_events"
-		render json: @allEvents
+	''' 
+		Input: ID of the user
+		Output: JSON list of event ids
+
+		This method retrieves all the events that are being followed by the user with the
+		specified id in the parameter.
+	'''
+	def getFollowedEvents
+		userID = params[:id]
+		@followedEvents = UserEvents.find_by_sql ["SELECT * FROM user_events WHERE users_id = ? AND following = ?", userID, 't']
+		render json: @followedEvents
+	end
+
+	''' 
+		Input: ID of the user
+		Output: JSON list of event ids
+
+		This method retrieves all the events that the user is going to.
+	'''
+	def getGoingToEvents
+		userID = params[:id]
+		@goingToEvents = UserEvents.find_by_sql ["SELECT * FROM user_events WHERE users_id = ? AND going = ?", userID, 't']
+		render json: @goingToEvents
 	end
 end
