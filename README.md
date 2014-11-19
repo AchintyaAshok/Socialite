@@ -29,7 +29,19 @@
 	- {server_root}/events (look up all available events)
 	- {server_root}/events/:id (search for an event by providing its id number)
 	- {server_root}/events/search/:search_string (search for an event using some keywords)
+<<<<<<< HEAD
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+TESTING AARTI
+=======
+	TENACIUS V WAS HUR
+>>>>>>> tanay_code
+=======
+	TENACIUS V WAS HUR
+=======
 Abhishek Test
+>>>>>>> origin/be_master
 =======
 - Routes:
 =======
@@ -50,6 +62,12 @@ Abhishek Test
 
 <<<<<<< HEAD
 ADDED GIT SUB MASTER
+>>>>>>> sub_master
+>>>>>>> tanay_code
+=======
+<<<<<<< HEAD
+ADDED GIT SUB MASTER
 >>>>>>> origin/sub_master
 =======
 >>>>>>> be_master
+>>>>>>> origin/be_master
