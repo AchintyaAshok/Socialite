@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'terms' => 'application_navigator#terms'
   get 'privacy' => 'application_navigator#privacy'
   get 'help' => 'application_navigator#help'
-
+  
   # API calls
   ## Events
   get 'api/events' => 'events#index'
@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   get 'api/users' => 'users#index'
   get 'api/users/:id' => 'users#show'
   get 'api/users/search/:searchString' => 'users#search'
+  get 'api/users/:id/events' => 'users#getEvents'
+  get 'api/users/:id/events/following' => 'users#getFollowedEvents'
+  get 'api/users/:id/events/goingto' => 'users#getGoingToEvents'
 
   #yelp api calls
   get 'yelp/search/:lat/:long' => 'application#searchByLatLong', :lat => /.*/, :long => /.*/
