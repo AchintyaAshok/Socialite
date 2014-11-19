@@ -10,9 +10,7 @@ Rails.application.routes.draw do
   get 'terms' => 'application_navigator#terms'
   get 'privacy' => 'application_navigator#privacy'
   get 'help' => 'application_navigator#help'
-
-
-
+  
   # API calls
   ## Events
   get 'api/events' => 'events#index'
