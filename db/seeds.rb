@@ -101,7 +101,6 @@ vincent = Users.create!(
 )
 vincent.save!
 
-<<<<<<< HEAD
 # Creating some venues (real data from yelp)
 v1 = Venue.create!(
 	  name: 'Prospect Park Brooklyn',
@@ -157,7 +156,7 @@ v5 = Venue.create!(
       rating: 5.0
 )
 v5.save!
-=======
+
 # User Events -- Events that users have chosen to follow or join:
 UserEvents.create(
 	users_id: Users.find(aarti.id).id,
@@ -195,4 +194,3 @@ UserEvents.create(
 	following: true,
 	going: false
 )
->>>>>>> origin/be_master
