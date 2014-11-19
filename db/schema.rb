@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141109174555) do
+ActiveRecord::Schema.define(version: 20141119031735) do
 
   create_table "events", force: true do |t|
     t.datetime "created_at"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20141109174555) do
     t.datetime "ends"
   end
 
+<<<<<<< HEAD
   create_table "businesses", force: true do |t| #Business table
   	t.string "business_name", null: false
   	t.string "business_location", null: false
@@ -42,5 +43,38 @@ ActiveRecord::Schema.define(version: 20141109174555) do
 
   
 
+=======
+  create_table "user_events", force: true do |t|
+    t.integer  "users_id"
+    t.integer  "events_id"
+    t.boolean  "following",  default: true,  null: false
+    t.boolean  "going",      default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "first_name", null: false
+    t.string   "last_name",  null: false
+    t.string   "username",   null: false
+    t.string   "email",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["username"], name: "index_users_on_username"
+
+  create_table "venues", force: true do |t|
+    t.string   "name"
+    t.string   "yelp_Id"
+    t.string   "ll"
+    t.string   "address"
+    t.string   "phone"
+    t.integer  "review_count"
+    t.float    "rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+>>>>>>> be_master
 
 end
