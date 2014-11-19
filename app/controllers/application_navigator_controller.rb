@@ -10,6 +10,9 @@ class ApplicationNavigatorController < ApplicationController
 		end
 		puts "This is the id passed in -> ", id
 	end
+<<<<<<< HEAD
+end
+=======
 
 <<<<<<< HEAD
 	def about
@@ -18,3 +21,4 @@ class ApplicationNavigatorController < ApplicationController
 end
 =======
 >>>>>>> fe_master
+>>>>>>> sub_master
