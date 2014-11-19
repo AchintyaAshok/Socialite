@@ -20,6 +20,12 @@
 	- {server_root}/events/:id
 - When you navigate to the server it will open up the index template for the application_navigator controller
 - Routes:
+	Events
 	- {server_root}/api/events (look up all available events)
 	- {server_root}/api/events/:id (search for an event by providing its id number)
 	- {server_root}/api/events/search/:search_string (search for an event using some keywords)
+	Users
+	- {server_root}/api/users -- Get all the Users in the Application
+	- {server_root}/api/users/:id -- Get a User by his/her id
+	- {server_root}/api/users/search/:search_string -- Get a User by searching by username
+	- {server_root}/api/users/:id/events -- Get all the events the user is following/going to

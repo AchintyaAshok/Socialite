@@ -25,4 +25,19 @@ class UsersController < ApplicationController
 		@users = Users.find_by_sql ["SELECT * FROM users WHERE username LIKE ?", searchStr]
 		render json: @users
 	end
+
+	'''
+		Input: ID of the user in params[:id]
+		Output: The list of all the events that this user is following or is going to.
+	'''
+	def getEvents
+		userID = Users.find(params[:id]).id
+		@userEvents = UserEvents.find_by_sql ["SELECT * FROM user_events WHERE users_id = ?", userID]
+		render json: @userEvents
+	end
+
+	def testGetAllUserEvents
+		@allEvents = UserEvents.find_by_sql "SELECT * FROM user_events"
+		render json: @allEvents
+	end
 end

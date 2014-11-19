@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get 'api/users' => 'users#index'
   get 'api/users/:id' => 'users#show'
   get 'api/users/search/:searchString' => 'users#search'
+  get 'api/users/:id/events' => 'users#getEvents'
+  get 'api/test' => 'users#testGetAllUserEvents'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
