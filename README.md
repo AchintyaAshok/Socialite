@@ -7,19 +7,18 @@
 4. Git push to your branch
 
 - You should be able to see your changes on your branch on the repo online
+- Front End People: Make changes to your branch then merge changes with fe_master
+- Back End People: Make changes to your branch then merge changes with be_master
+
+- once stable builds made for fe_master and be_master, we will merge both into sub_master and then into master
 
 ## Usage
 1. Run the rails server by running the command: "rails s" or "rails server" after navigating to the application folder.
 
 ### Available Routes
 - Check out the routes.rb file to understand what currently available routes are for the application
-- To go home:
-	- {server_root}/home
-	- {server_root}
-- To go to an event:
-	- {server_root}/events/:id
-- When you navigate to the server it will open up the index template for the application_navigator controller
-- Routes:
+
+#### Routes:
 	Events
 	- {server_root}/api/events (look up all available events)
 	- {server_root}/api/events/:id (search for an event by providing its id number)
