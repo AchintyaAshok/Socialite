@@ -9,9 +9,5 @@ class ApplicationNavigatorController < ApplicationController
 			index()
 		end
 		puts "This is the id passed in -> ", id
-<<<<<<< HEAD
-	end
-=======
-	end
+
 end
->>>>>>> tanay_code
