@@ -100,3 +100,41 @@ vincent = Users.create!(
 	email: "vincenzo@socialite.com"
 )
 vincent.save!
+
+# User Events -- Events that users have chosen to follow or join:
+UserEvents.create(
+	users_id: Users.find(aarti.id),
+	events_id: Events.find(e1.id),
+	following: true,
+	going: true
+)
+UserEvents.create(
+	users_id: Users.find(aarti.id),
+	events_id: Events.find(e2.id),
+	following: true,
+	going: true
+)
+UserEvents.create(
+	users_id: Users.find(achintya.id),
+	events_id: Events.find(e3.id),
+	following: true,
+	going: false
+)
+UserEvents.create(
+	users_id: Users.find(achintya.id),
+	events_id: Events.find(e4.id),
+	following: true,
+	going: true
+)
+UserEvents.create(
+	users_id: Users.find(abhishek.id),
+	events_id: Events.find(e5.id),
+	following: true,
+	going: false
+)
+UserEvents.create(
+	users_id: Users.find(abhishek.id),
+	events_id: Events.find(e6.id),
+	following: true,
+	going: false
+)
