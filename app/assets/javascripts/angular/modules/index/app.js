@@ -11,11 +11,11 @@ var tradingPost = angular.module('SocialiteApp', [
 tradingPost.config(['$routeProvider', 
 	function($routeProvider){
 		$routeProvider.when("/home", {
-			templateUrl: '../templates/homepage.html',
+			templateUrl: '../templates/index.html',
 			controller: 'HomepageController'
 		});
 		$routeProvider.otherwise({
-			templateUrl: '../templates/homepage.html',
+			templateUrl: '../templates/index.html',
 			controller: 'HomepageController'
 		});
 	}
