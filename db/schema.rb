@@ -38,6 +38,9 @@ ActiveRecord::Schema.define(version: 20141109174555) do
   	t.text "description"
   	t.datetime "starts", null: false
   	t.datetime "ends", null: false
+  end
+
+  
 
 
 end
