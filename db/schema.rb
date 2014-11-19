@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20141117225901) do
+=======
+ActiveRecord::Schema.define(version: 20141119031735) do
+>>>>>>> origin/be_master
 
   create_table "events", force: true do |t|
     t.datetime "created_at"
@@ -21,6 +25,15 @@ ActiveRecord::Schema.define(version: 20141117225901) do
     t.string   "venue"
     t.datetime "starts"
     t.datetime "ends"
+  end
+
+  create_table "user_events", force: true do |t|
+    t.integer  "users_id"
+    t.integer  "events_id"
+    t.boolean  "following",  default: true,  null: false
+    t.boolean  "going",      default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

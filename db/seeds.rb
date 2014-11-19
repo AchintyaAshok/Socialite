@@ -101,6 +101,7 @@ vincent = Users.create!(
 )
 vincent.save!
 
+<<<<<<< HEAD
 # Creating some venues (real data from yelp)
 v1 = Venue.create!(
 	  name: 'Prospect Park Brooklyn',
@@ -156,3 +157,42 @@ v5 = Venue.create!(
       rating: 5.0
 )
 v5.save!
+=======
+# User Events -- Events that users have chosen to follow or join:
+UserEvents.create(
+	users_id: Users.find(aarti.id).id,
+	events_id: Events.find(e1.id).id,
+	following: true,
+	going: true
+)
+UserEvents.create(
+	users_id: Users.find(aarti.id).id,
+	events_id: Events.find(e2.id).id,
+	following: true,
+	going: true
+)
+UserEvents.create(
+	users_id: Users.find(achintya.id).id,
+	events_id: Events.find(e3.id).id,
+	following: true,
+	going: false
+)
+UserEvents.create(
+	users_id: Users.find(achintya.id).id,
+	events_id: Events.find(e4.id).id,
+	following: true,
+	going: true
+)
+UserEvents.create(
+	users_id: Users.find(abhishek.id).id,
+	events_id: Events.find(e5.id).id,
+	following: true,
+	going: false
+)
+UserEvents.create(
+	users_id: Users.find(abhishek.id).id,
+	events_id: Events.find(e6.id).id,
+	following: true,
+	going: false
+)
+>>>>>>> origin/be_master
