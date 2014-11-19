@@ -7,6 +7,12 @@ Rails.application.routes.draw do
   get 'home' => 'application_navigator#index'
   get 'events/:id' => 'application_navigator#getEvent'
   get 'about' => 'application_navigator#about'
+  get 'terms' => 'application_navigator#terms'
+  get 'privacy' => 'application_navigator#privacy'
+  get 'help' => 'application_navigator#help'
+
+
+
   # API calls
   ## Events
   get 'api/events' => 'events#index'
