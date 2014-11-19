@@ -16,34 +16,13 @@ ActiveRecord::Schema.define(version: 20141119031735) do
   create_table "events", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name", null: false
+    t.string   "name"
     t.text     "description"
     t.string   "venue"
     t.datetime "starts"
     t.datetime "ends"
   end
 
-<<<<<<< HEAD
-  create_table "businesses", force: true do |t| #Business table
-  	t.string "business_name", null: false
-  	t.string "business_location", null: false
-  	t.string "business_email", null: false
-  	t.string "business_username", null: false
-  	t.datetime "hours_open", null: false
-  	t.datetime "hours_closed", null: false
-  end
-
-  create table "business_events", force: true do |t| #Business and events table.
-  	t.string "business_event_name", null: false
-  	t.string "location"
-  	t.text "description"
-  	t.datetime "starts", null: false
-  	t.datetime "ends", null: false
-  end
-
-  
-
-=======
   create_table "user_events", force: true do |t|
     t.integer  "users_id"
     t.integer  "events_id"
@@ -75,6 +54,5 @@ ActiveRecord::Schema.define(version: 20141119031735) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
->>>>>>> be_master
 
 end
