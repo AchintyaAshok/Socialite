@@ -3,11 +3,10 @@ class CreateVenues < ActiveRecord::Migration
     create_table :venues do |t|
       t.string :name
       t.string :yelp_Id
-      t.string :ll
+      t.float :lat
+      t.float :long
       t.string :address
       t.string :phone
-      t.integer :review_count
-      t.float :rating
       t.timestamps
     end
   end
