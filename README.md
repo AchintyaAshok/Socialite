@@ -17,41 +17,13 @@
 
 ### Available Routes
 - Check out the routes.rb file to understand what currently available routes are for the application
-<<<<<<< HEAD
-- To go home:
-	- {server_root}/home
-	- {server_root}
-- To go to an event:
-	- {server_root}/events/:id
-- When you navigate to the server it will open up the index template for the application_navigator controller
-<<<<<<< HEAD
-- Other routes to check out include:
-	- {server_root}/events (look up all available events)
-	- {server_root}/events/:id (search for an event by providing its id number)
-	- {server_root}/events/search/:search_string (search for an event using some keywords)
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-TESTING AARTI
-=======
-	TENACIUS V WAS HUR
->>>>>>> tanay_code
-=======
-	TENACIUS V WAS HUR
-=======
-Abhishek Test
->>>>>>> origin/be_master
-=======
-- Routes:
-=======
 
 #### Routes:
 	Events
->>>>>>> be_master
-	- {server_root}/api/events (look up all available events)
-	- {server_root}/api/events/:id (search for an event by providing its id number)
-	- {server_root}/api/events/search/:search_string (search for an event using some keywords)
+	- {server_root}/api/events -- look up all available events
+	- {server_root}/api/events/:id  -- search for an event by providing its id number
+	- {server_root}/api/events/search/:search_string -- search for an event using some keywords
+
 	Users
 	- {server_root}/api/users -- Get all the Users in the Application
 	- {server_root}/api/users/:id -- Get a User by his/her id
@@ -59,15 +31,3 @@ Abhishek Test
 	- {server_root}/api/users/:id/events -- Get all the events the user is following/going to
 	- {server_root}/api/users/:id/events/following -- All the events being followed for user
 	- {server_root}/api/users/:id/events/goingto -- All the events user is going to 
-
-<<<<<<< HEAD
-ADDED GIT SUB MASTER
->>>>>>> sub_master
->>>>>>> tanay_code
-=======
-<<<<<<< HEAD
-ADDED GIT SUB MASTER
->>>>>>> origin/sub_master
-=======
->>>>>>> be_master
->>>>>>> origin/be_master
