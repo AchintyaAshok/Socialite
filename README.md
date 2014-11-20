@@ -21,7 +21,7 @@
 #### Routes:
 	Events
 	- {server_root}/api/events -- look up all available events
-	- {server_root}/api/events/:id -- search for an event by providing its id number)
+	- {server_root}/api/events/:id  -- search for an event by providing its id number
 	- {server_root}/api/events/search/:search_string -- search for an event using some keywords
 
 	Users
