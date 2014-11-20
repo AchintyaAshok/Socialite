@@ -46,11 +46,10 @@ ActiveRecord::Schema.define(version: 20141119031735) do
   create_table "venues", force: true do |t|
     t.string   "name"
     t.string   "yelp_Id"
-    t.string   "ll"
+    t.float    "lat"
+    t.float    "long"
     t.string   "address"
     t.string   "phone"
-    t.integer  "review_count"
-    t.float    "rating"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
