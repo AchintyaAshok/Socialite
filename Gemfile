@@ -15,6 +15,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer',  platforms: :ruby
 gem 'tzinfo-data'
 
+gem 'instagram'
 gem 'yelp', require: 'yelp'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

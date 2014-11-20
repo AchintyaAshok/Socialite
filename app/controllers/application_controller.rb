@@ -3,6 +3,15 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  # Vincent gets an SSL error without this statement, might be a Windows thing
+  OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+
+  Instagram.configure do |config|
+    config.client_id = "566ea725db764e58b46700d468864ef4"
+    config.client_secret = "0dc90579831841a1832933b71ec38cb3"
+    config.access_token = "30916787.566ea72.ce7d060adc974c6fb470d4715ad8751b"
+  end
+
   $yelpClient = Yelp::Client.new({consumer_key: 'P0c0K1K4r1BQL35xHG55Dg',
                     		          consumer_secret: 'x1aO6bg8TLD99-iP9bqnQBlstio',
                     		          token: 'pZFBgc9FwJel-Cf8ObUw5Lzij_0YRr_M',
@@ -27,6 +36,15 @@ class ApplicationController < ActionController::Base
   #yelp/searchTerm/:term/:lat/:long, returns buisnessed that match a certain term, ex: "movies" near a specific lat long
   def searchByTerm
   	render json: $yelpClient.search_by_coordinates({latitude: params[:lat], longitude: params[:long]}, {limit: 5, term: params[:term]}).businesses
+  end
+
+  #instagram
+  def searchForPictures
+    @images = Array.new
+    for media_item in Instagram.media_search(params[:lat], params[:long], {distance: 100})
+      @images << media_item.images.standard_resolution.url
+    end
+    render json: @images
   end
 
 end

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   ## Events
   get 'api/events' => 'events#index'
   get 'api/events/:id' => 'events#show'
+  get 'api/eventsVenue/:venue_id' => 'events#searchVenue' # searches for events that happen at a specific venue
   get 'api/events/search/:searchString' => 'events#search' # allows searching by a string for events
   ## Users
   get 'api/users' => 'users#index'
@@ -23,14 +24,20 @@ Rails.application.routes.draw do
   get 'api/users/:id/events' => 'users#getEvents'
   get 'api/users/:id/events/following' => 'users#getFollowedEvents'
   get 'api/users/:id/events/goingto' => 'users#getGoingToEvents'
+  #Venue
+  get 'api/venue' => 'venue#index'
+  get 'api/venue/:id' => 'venue#show'
+  get 'api/venue/search/:searchString' => 'venue#search'
 
   #yelp api calls
-  get 'yelp/search/:lat/:long' => 'application#searchByLatLong', :lat => /.*/, :long => /.*/
-  get 'yelp/search/:id' => 'application#searchById'
+  get 'api/yelp/search/:lat/:long' => 'application#searchByLatLong', :lat => /.*/, :long => /.*/
+  get 'api/yelp/search/:id' => 'application#searchById'
   
-  get 'yelp/searchExact/:exactLocation' => 'application#searchByExact'
-  get 'yelp/searchTerm/:term/:lat/:long' => 'application#searchByTerm', :lat => /.*/, :long => /.*/
+  get 'api/yelp/searchExact/:exactLocation' => 'application#searchByExact'
+  get 'api/yelp/searchTerm/:term/:lat/:long' => 'application#searchByTerm', :lat => /.*/, :long => /.*/
   
+  #instagram api
+  get 'api/instagram/search/:lat/:long' => 'application#searchForPictures', :lat => /.*/, :long => /.*/
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

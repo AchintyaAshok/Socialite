@@ -15,4 +15,9 @@ class EventsController < ApplicationController
 		@events = Events.find_by_sql ["SELECT * FROM events WHERE name LIKE ? OR description LIKE ?", searchStr, searchStr]
 		render json: @events
 	end
+	#Find events that happen at a specific venue, given that venue id
+	def searchVenue
+		@events = Events.find_by_sql ["SELECT * FROM events WHERE venue_id = ?", params[:venue_id]]
+		render json: @events
+	end
 end
