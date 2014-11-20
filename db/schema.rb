@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20141119031735) do
   create_table "events", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name", null: false
+    t.string   "name"
     t.text     "description"
     t.string   "venue"
     t.datetime "starts"
@@ -54,6 +54,5 @@ ActiveRecord::Schema.define(version: 20141119031735) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
->>>>>>> be_master
 
 end
