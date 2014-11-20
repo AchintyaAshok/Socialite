@@ -12,6 +12,13 @@
  *
  *= require_tree .
  *= require_self
- *= require css/bootstrap-theme.min
- *= require css/bootstrap.min
  */
+
+ @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800);
+
+body{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	padding:0 !important;
+	margin:0 !important;
+}
