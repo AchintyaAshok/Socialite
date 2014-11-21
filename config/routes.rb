@@ -31,6 +31,14 @@ Rails.application.routes.draw do
   get 'yelp/searchExact/:exactLocation' => 'application#searchByExact'
   get 'yelp/searchTerm/:term/:lat/:long' => 'application#searchByTerm', :lat => /.*/, :long => /.*/
   
+
+  ## Business
+  get 'api/businesses' => 'business#index'
+  get 'api/businesses/:id' => 'business#show'
+  get 'api/businesses/search/:searchString' => 'business#search'
+  get 'api/businesses/:id/events' => 'business#getEvents'
+  # put 'api/businesses/:id' => 'businesses#createEvent'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

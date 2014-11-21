@@ -189,3 +189,25 @@ UserEvents.create(
 	following: true,
 	going: false
 )
+
+
+#Abhishek Businesses
+
+as1 = Business.create!(
+	name: "Luciano's",
+	number: "111-111-1111",
+	email: "luciano@socialite.com",
+	address: "Metrotech Center" 
+)
+
+as2 = Events.create!(
+	name: "Luciano Event",
+	description: "Test Luciano Event",
+	venue: "Test Venue",
+	starts: "Anytime"
+)
+
+BusinessEvent.create!(
+	businesses_id: Business.find(as1.id).id,
+	events_id: Events.find(as2.id).id
+)
