@@ -16,7 +16,6 @@
 //= require angular/angular-loader/angular-loader.js
 //= require angular/angular-mocks/angular-mocks.js
 //= require angular/angular-route/angular-route.js
-//= require bootstrap/js/bootstrap.min.js
 //= require holder.js
 //= require turbolinks
 //= require_tree .
