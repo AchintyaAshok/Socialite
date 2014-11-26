@@ -1,0 +1,45 @@
+<!-- IF USER IS NOT LOGGED IN -->
+<div ng-if="!isAuthenticated">
+	user is not logged in. cannot view specific event.
+</div>
+
+<!-- IF USER IS LOGGED IN -->
+<div ng-if="isAuthenticated">
+	<h3 class="sl-event-sec">event</h3>
+	<h1 class="sl-event-title">{{eventData.name}}</h1>
+	<p class="sl-event-description">{{eventData.description}}</p>
+	<div class="event-info">
+		<div class="grid">
+			<div class="col-1-3">
+				<p class="sl-event-venue"><a href="#">Venue Name</a></p>
+				<p class="sl-event-venue">Street</p>
+				<p class="sl-event-venue">City, State, Zip</p>
+				<p class="sl-event-venue">Phone Number</p>
+			</div>
+			<div class="col-1-3">
+				<div class="sl-event-time" ng-if="isEndDate">
+					<h4 class="sl-event-time">{{startWeekDate}} {{startDate}}</h4>
+					<p class="sl-event-time">{{startTime}} &#8212; {{endTime}}</p>
+				</div>
+				<div class="sl-event-time" ng-if="!isEndDate">
+					<h4 class="sl-event-time">{{startWeekDate}} {{startDate}}</h4>
+					<p class="sl-event-time">{{startTime}}</p>
+					<p class="sl-event-time">&#8212;</p>
+					<h4 class="sl-event-time">{{endWeekDate}} {{endDate}}</h4>
+					<p class="sl-event-time">{{endTime}}</p>
+				</div>			
+			</div>
+			<div class="col-1-3">
+				<div class="sl-event-icons">
+					<div class="sl-event-attend hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1a">
+						<span class="hi-icon icon-calendar"></span>				
+					</div>
+					<div class="sl-event-follow hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1a">
+						<span class="hi-icon icon-eye"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
