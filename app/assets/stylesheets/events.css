@@ -14,7 +14,7 @@ h3.sl-event-sec{
 	text-align: center;
 }
 
-div.event-info{
+div.sl-event-info{
 	width:100%;
 	overflow:visible;
 	padding:20px;
@@ -61,4 +61,14 @@ div.sl-event-attend, div.sl-event-follow{
 
 div.sl-event-time{
 	margin:10px 0px;
+}
+
+div.sl-event-num-attending{
+	margin-top:10px;
+	font-size: 20pt;
+	text-align: center;
+}
+
+span.sl-event-num-attending{
+	font-weight: 600;
 }

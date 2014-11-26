@@ -16,8 +16,7 @@ getEventController.controller('getEventController', ['$scope', '$http', '$routeP
 		$scope.startDate = null;
 		$scope.startWeekDate = null;
 		$scope.startTime = null;
-
-		$scope.isEndDate = false;
+		
 		$scope.endDate = null;
 		$scope.endWeekDate = null;
 		$scope.endTime = null;
@@ -88,16 +87,12 @@ getEventController.controller('getEventController', ['$scope', '$http', '$routeP
 					
 					$scope.startTime = _formatTime(startdate);
 
-					// check if end date is different from start date, if it is, set up end date
+					// set up end date
 					var enddateMonthDayYear = data[0].ends.slice(0,data[0].ends.indexOf('T'));
 					var enddateTime = data[0].ends.slice(data[0].ends.indexOf('T')+1,data[0].ends.indexOf('.'));
 					var enddate = new Date(enddateMonthDayYear + " " + enddateTime);
 					$scope.endWeekDate = days[enddate.getDay()];					
-					$scope.endDate = Number(enddate.getMonth()+1) + "/" + enddate.getDate();
-					
-					if($scope.endWeekDate == $scope.startWeekDate && $scope.endDate == $scope.startDate){
-						$scope.isEndDate = true;
-					}
+					$scope.endDate = Number(enddate.getMonth()+1) + "/" + enddate.getDate();									
 
 					$scope.endTime = _formatTime(enddate);
 
@@ -115,8 +110,16 @@ getEventController.controller('getEventController', ['$scope', '$http', '$routeP
 
     				// TO DO: SET UP VENUE & NUM_ATTENDING
     				$scope.venueData = {
-    					
+    					venue_id: '1',
+    					name: 'The Fat Black Pussycat',
+    					street: '130 W 3rd St',
+    					city: 'New York',
+    					state: 'NY',
+    					zip: '10012',
+    					phone: '(212) 533-4790'
     				}
+
+    				$scope.eventData.num_attending = '80';
 
 		        })
         }

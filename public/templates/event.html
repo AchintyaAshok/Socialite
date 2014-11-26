@@ -8,20 +8,16 @@
 	<h3 class="sl-event-sec">event</h3>
 	<h1 class="sl-event-title">{{eventData.name}}</h1>
 	<p class="sl-event-description">{{eventData.description}}</p>
-	<div class="event-info">
+	<div class="sl-event-info">
 		<div class="grid">
 			<div class="col-1-3">
-				<p class="sl-event-venue"><a href="#">Venue Name</a></p>
-				<p class="sl-event-venue">Street</p>
-				<p class="sl-event-venue">City, State, Zip</p>
-				<p class="sl-event-venue">Phone Number</p>
+				<p class="sl-event-venue"><a href="/venue/{{venueData.venue_id}}">{{venueData.name}}</a></p>
+				<p class="sl-event-venue">{{venueData.street}}</p>
+				<p class="sl-event-venue">{{venueData.city}}, {{venueData.state}} {{venueData.zip}}</p>
+				<p class="sl-event-venue">{{venueData.phone}}</p>
 			</div>
 			<div class="col-1-3">
-				<div class="sl-event-time" ng-if="isEndDate">
-					<h4 class="sl-event-time">{{startWeekDate}} {{startDate}}</h4>
-					<p class="sl-event-time">{{startTime}} &#8212; {{endTime}}</p>
-				</div>
-				<div class="sl-event-time" ng-if="!isEndDate">
+				<div class="sl-event-time">
 					<h4 class="sl-event-time">{{startWeekDate}} {{startDate}}</h4>
 					<p class="sl-event-time">{{startTime}}</p>
 					<p class="sl-event-time">&#8212;</p>
@@ -40,6 +36,9 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="sl-event-num-attending">
+		<span class="sl-event-num-attending">{{eventData.num_attending}}</span> people are attending
 	</div>
 </div>
 
