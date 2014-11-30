@@ -117,7 +117,7 @@ achinty = Person.create!(
 	first_name: "Achintya",
 	last_name: "Ashok",
 	username: "KingChintz",
-	email: "kingchintz@sociliate.com",
+	email: "kingchintz@socialite.com",
 	password: "achintyaashok",
 	password_confirmation: "achintyaashok"
 )
