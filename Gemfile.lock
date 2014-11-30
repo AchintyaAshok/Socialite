@@ -132,8 +132,8 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  instagram
   devise
+  instagram
   jquery-rails
   rails (= 4.1.5)
   sdoc (~> 0.4.0)
