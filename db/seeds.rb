@@ -60,46 +60,137 @@ e6 = Events.create!(
 )
 e6.save!
 
+# # Creating some Dummy Users
+# aarti = Users.create!(
+# 	first_name: "Aarti",
+# 	last_name: "Patel",
+# 	username: "aartiparty",
+# 	email: "aartipaarty@socialite.com"
+# )
+# aarti.save!
+
+# achintya = Users.create!(
+# 	first_name: "Achintya",
+# 	last_name: "Ashok",
+# 	username: "KingChintz",
+# 	email: "kingchintz@sociliate.com"
+# )
+# achintya.save!
+
+# abhishek = Users.create!(
+# 	first_name: "Abhishek",
+# 	last_name: "Sharma",
+# 	username: "Abhishek",
+# 	email: "abhishek@socialite.com"
+# )
+# abhishek.save!
+
+# tanay = Users.create!(
+# 	first_name: "Tanay",
+# 	last_name: "Ved",
+# 	username: "tanuved",
+# 	email: "tanuved@socialite.com"
+# )
+# tanay.save!
+
+# vincent = Users.create!(
+# 	first_name: "Vincent",
+# 	last_name: "Fong",
+# 	username: "vincenzo",
+# 	email: "vincenzo@socialite.com"
+# )
+# vincent.save!
+
+
 # Creating some Dummy Users
-aarti = Users.create!(
+aart = Person.create!(
 	first_name: "Aarti",
 	last_name: "Patel",
-	username: "aartipaty",
-	email: "aartipaarty@socialite.com"
+	username: "aartiparty",
+	email: "aartipaarty@socialite.com",
+	password: "aartipatel",
+	password_confirmation: "aartipatel"
 )
-aarti.save!
+aart.save!
 
-achintya = Users.create!(
+achinty = Person.create!(
 	first_name: "Achintya",
 	last_name: "Ashok",
 	username: "KingChintz",
-	email: "kingchintz@sociliate.com"
+	email: "kingchintz@sociliate.com",
+	password: "achintyaashok",
+	password_confirmation: "achintyaashok"
 )
-achintya.save!
+achinty.save!
 
-abhishek = Users.create!(
+abhishe = Person.create!(
 	first_name: "Abhishek",
 	last_name: "Sharma",
 	username: "Abhishek",
-	email: "abhishek@socialite.com"
+	email: "abhishek@socialite.com",
+	password: "abhisheksharma",
+	password_confirmation: "abhisheksharma"
 )
-abhishek.save!
+abhishe.save!
 
-tanay = Users.create!(
+tana = Person.create!(
 	first_name: "Tanay",
 	last_name: "Ved",
 	username: "tanuved",
-	email: "tanuved@socialite.com"
+	email: "tanuved@socialite.com",
+	password: "tanayved",
+	password_confirmation: "tanayved"
 )
-tanay.save!
+tana.save!
 
-vincent = Users.create!(
+vincen = Person.create!(
 	first_name: "Vincent",
 	last_name: "Fong",
 	username: "vincenzo",
-	email: "vincenzo@socialite.com"
+	email: "vincenzo@socialite.com",
+	password: "vincentfong",
+	password_confirmation: "vincentfong"
 )
-vincent.save!
+vincen.save!
+
+# User Events -- Events that users have chosen to follow or join:
+PersonEvent.create(
+	people_id: Person.find(aart.id).id,
+	events_id: Events.find(e1.id).id,
+	following: true,
+	going: true
+)
+PersonEvent.create(
+	people_id: Person.find(aart.id).id,
+	events_id: Events.find(e2.id).id,
+	following: true,
+	going: true
+)
+PersonEvent.create(
+	people_id: Person.find(achinty.id).id,
+	events_id: Events.find(e3.id).id,
+	following: true,
+	going: false
+)
+PersonEvent.create(
+	people_id: Person.find(achinty.id).id,
+	events_id: Events.find(e4.id).id,
+	following: true,
+	going: true
+)
+PersonEvent.create(
+	people_id: Person.find(abhishe.id).id,
+	events_id: Events.find(e5.id).id,
+	following: true,
+	going: false
+)
+PersonEvent.create(
+	people_id: Person.find(abhishe.id).id,
+	events_id: Events.find(e6.id).id,
+	following: true,
+	going: false
+)
+
 
 # Creating some venues (real data from yelp)
 v1 = Venue.create!(
@@ -152,43 +243,43 @@ v5 = Venue.create!(
 )
 v5.save!
 
-# User Events -- Events that users have chosen to follow or join:
-UserEvents.create(
-	users_id: Users.find(aarti.id).id,
-	events_id: Events.find(e1.id).id,
-	following: true,
-	going: true
-)
-UserEvents.create(
-	users_id: Users.find(aarti.id).id,
-	events_id: Events.find(e2.id).id,
-	following: true,
-	going: true
-)
-UserEvents.create(
-	users_id: Users.find(achintya.id).id,
-	events_id: Events.find(e3.id).id,
-	following: true,
-	going: false
-)
-UserEvents.create(
-	users_id: Users.find(achintya.id).id,
-	events_id: Events.find(e4.id).id,
-	following: true,
-	going: true
-)
-UserEvents.create(
-	users_id: Users.find(abhishek.id).id,
-	events_id: Events.find(e5.id).id,
-	following: true,
-	going: false
-)
-UserEvents.create(
-	users_id: Users.find(abhishek.id).id,
-	events_id: Events.find(e6.id).id,
-	following: true,
-	going: false
-)
+# # User Events -- Events that users have chosen to follow or join:
+# UserEvents.create(
+# 	users_id: Users.find(aarti.id).id,
+# 	events_id: Events.find(e1.id).id,
+# 	following: true,
+# 	going: true
+# )
+# UserEvents.create(
+# 	users_id: Users.find(aarti.id).id,
+# 	events_id: Events.find(e2.id).id,
+# 	following: true,
+# 	going: true
+# )
+# UserEvents.create(
+# 	users_id: Users.find(achintya.id).id,
+# 	events_id: Events.find(e3.id).id,
+# 	following: true,
+# 	going: false
+# )
+# UserEvents.create(
+# 	users_id: Users.find(achintya.id).id,
+# 	events_id: Events.find(e4.id).id,
+# 	following: true,
+# 	going: true
+# )
+# UserEvents.create(
+# 	users_id: Users.find(abhishek.id).id,
+# 	events_id: Events.find(e5.id).id,
+# 	following: true,
+# 	going: false
+# )
+# UserEvents.create(
+# 	users_id: Users.find(abhishek.id).id,
+# 	events_id: Events.find(e6.id).id,
+# 	following: true,
+# 	going: false
+# )
 
 
 #Abhishek Businesses

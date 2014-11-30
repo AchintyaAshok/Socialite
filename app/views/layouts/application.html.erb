@@ -7,7 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+	<!-- BEGIN Devise Authentication Stuff -->
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+	<!-- END Devise Authentication Stuff -->
 <%= yield %>
 
 </body>

@@ -1,4 +1,4 @@
 class Events < ActiveRecord::Base
-	has_many :user_events, :class_name => 'UserEvents', :dependent => :destroy
-	has_many :users, :through => :user_events
+	has_many :person_events, :dependent => :destroy
+	has_many :people, :through => :person_events
 end

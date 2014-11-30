@@ -1,42 +1,45 @@
 Rails.application.routes.draw do
+  devise_for :people
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'application_navigator#index'
-  get 'home' => 'application_navigator#index'
-  get 'events/:id' => 'application_navigator#getEvent'
-  get 'about' => 'application_navigator#about'
-  get 'terms' => 'application_navigator#terms'
-  get 'privacy' => 'application_navigator#privacy'
-  get 'help' => 'application_navigator#help'
+  get 'home'        => 'application_navigator#index'
+  get 'events/:id'  => 'application_navigator#getEvent'
+  get 'about'       => 'application_navigator#about'
+  get 'terms'       => 'application_navigator#terms'
+  get 'privacy'     => 'application_navigator#privacy'
+  get 'help'        => 'application_navigator#help'
+  get 'signout'     => 'application_navigator#signOut'
   
   # API calls
   ## Events
-  get 'api/events' => 'events#index'
-  get 'api/events/:id' => 'events#show'
+  get 'api/events'      => 'events#index'
+  get 'api/events/:id'  => 'events#show'
   get 'api/events/search/:searchString' => 'events#search' # allows searching by a string for events
-  ## Users
-  get 'api/users' => 'users#index'
-  get 'api/users/:id' => 'users#show'
-  get 'api/users/search/:searchString' => 'users#search'
-  get 'api/users/:id/events' => 'users#getEvents'
-  get 'api/users/:id/events/following' => 'users#getFollowedEvents'
-  get 'api/users/:id/events/goingto' => 'users#getGoingToEvents'
+
+  ## People
+  get 'api/people'                      => 'person#index'
+  get 'api/people/:id'                  => 'person#show'
+  get 'api/people/search/:searchString' => 'person#search'
+  get 'api/people/:id/events'           => 'person#getEvents'
+  get 'api/people/:id/events/following' => 'person#getFollowedEvents'
+  get 'api/people/:id/events/goingto'   => 'person#getGoingToEvents'
 
   #yelp api calls
-  get 'yelp/search/:lat/:long' => 'application#searchByLatLong', :lat => /.*/, :long => /.*/
-  get 'yelp/search/:id' => 'application#searchById'
+  get 'yelp/search/:lat/:long'  => 'application#searchByLatLong', :lat => /.*/, :long => /.*/
+  get 'yelp/search/:id'         => 'application#searchById'
   
-  get 'yelp/searchExact/:exactLocation' => 'application#searchByExact'
-  get 'yelp/searchTerm/:term/:lat/:long' => 'application#searchByTerm', :lat => /.*/, :long => /.*/
+  get 'yelp/searchExact/:exactLocation'   => 'application#searchByExact'
+  get 'yelp/searchTerm/:term/:lat/:long'  => 'application#searchByTerm', :lat => /.*/, :long => /.*/
   
 
   ## Business
-  get 'api/businesses' => 'business#index'
-  get 'api/businesses/:id' => 'business#show'
+  get 'api/businesses'                      => 'business#index'
+  get 'api/businesses/:id'                  => 'business#show'
   get 'api/businesses/search/:searchString' => 'business#search'
-  get 'api/businesses/:id/events' => 'business#getEvents'
+  get 'api/businesses/:id/events'           => 'business#getEvents'
   # put 'api/businesses/:id' => 'businesses#createEvent'
 
   # Example of regular route:
