@@ -34,11 +34,11 @@ Rails.application.routes.draw do
   get 'api/venue/search/:searchString' => 'venue#search'
 
   #yelp api calls
-  get 'yelp/search/:lat/:long'  => 'application#searchByLatLong', :lat => /.*/, :long => /.*/
-  get 'yelp/search/:id'         => 'application#searchById'
+  get 'api/yelp/search/:lat/:long'  => 'application#searchByLatLong', :lat => /.*/, :long => /.*/
+  get 'api/yelp/search/:id'         => 'application#searchById'
   
-  get 'yelp/searchExact/:exactLocation'   => 'application#searchByExact'
-  get 'yelp/searchTerm/:term/:lat/:long'  => 'application#searchByTerm', :lat => /.*/, :long => /.*/
+  get 'api/yelp/searchExact/:exactLocation'   => 'application#searchByExact'
+  get 'api/yelp/searchTerm/:term/:lat/:long'  => 'application#searchByTerm', :lat => /.*/, :long => /.*/
   
   #instagram api
   get 'api/instagram/search/:lat/:long' => 'application#searchForPictures', :lat => /.*/, :long => /.*/

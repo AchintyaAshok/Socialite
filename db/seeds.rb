@@ -354,8 +354,10 @@ as1 = Business.create!(
 as2 = Events.create!(
 	name: "Luciano Event",
 	description: "Test Luciano Event",
-	venue: "Test Venue",
-	starts: "Anytime"
+	venue_id: Venue.find(v5.id).id,
+	starts: DateTime.new(2014, 11, 9, 10, 30), 
+	ends: DateTime.new(2014, 11, 9, 13, 0),
+	num_attending: 0
 )
 
 BusinessEvent.create!(
