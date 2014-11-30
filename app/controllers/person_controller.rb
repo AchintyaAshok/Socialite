@@ -1,17 +1,24 @@
-class UsersController < ApplicationController
+class PersonController < ApplicationController
 	'''
 	Returns all the users in the users table.
 	'''
 	def index
-		@users = Users.find_by_sql "SELECT * FROM users ORDER BY username"
-		render json: @users
+		@people = Person.find_by_sql "SELECT * FROM people ORDER BY username"
+		render json: @people
 	end
 
 	'''
 	Finds a user by the id number provided in the parameter.
 	'''
 	def show
-		@user = Users.find_by_sql ["SELECT * FROM users WHERE id = ?", params[:id]]
+		@user = Person.find_by_sql ["SELECT * FROM people WHERE id = ?", params[:id]]
+		
+		# connection = ActiveRecord::Base.connection.raw_connection
+		# connection.prepare('query_statement', "SELECT * FROM people WHERE id = $1")
+		# st = connection.exec_prepared('query_statement', params[:id])
+		
+		# puts st
+
 		render json: @user
 	end
 
@@ -22,7 +29,7 @@ class UsersController < ApplicationController
 	def search
 		searchStr = params[:searchString]
 		searchStr = "%" + searchStr + "%"
-		@users = Users.find_by_sql ["SELECT * FROM users WHERE username LIKE ?", searchStr]
+		@users = Person.find_by_sql ["SELECT * FROM users WHERE username LIKE ?", searchStr]
 		render json: @users
 	end
 
@@ -33,8 +40,8 @@ class UsersController < ApplicationController
 		Method that gets all followed and events that the user is going to.
 	'''
 	def getEvents
-		userID = Users.find(params[:id]).id
-		@userEvents = UserEvents.find_by_sql ["SELECT * FROM user_events WHERE users_id = ?", userID]
+		userID = Person.find(params[:id]).id
+		@userEvents = PersonEvent.find_by_sql ["SELECT * FROM person_events WHERE people_id = ?", userID]
 		render json: @userEvents
 	end
 
@@ -47,7 +54,7 @@ class UsersController < ApplicationController
 	'''
 	def getFollowedEvents
 		userID = params[:id]
-		@followedEvents = UserEvents.find_by_sql ["SELECT * FROM user_events WHERE users_id = ? AND following = ?", userID, 't']
+		@followedEvents = PersonEvent.find_by_sql ["SELECT * FROM person_events WHERE people_id = ? AND following = ?", userID, 't']
 		render json: @followedEvents
 	end
 
@@ -59,7 +66,7 @@ class UsersController < ApplicationController
 	'''
 	def getGoingToEvents
 		userID = params[:id]
-		@goingToEvents = UserEvents.find_by_sql ["SELECT * FROM user_events WHERE users_id = ? AND going = ?", userID, 't']
+		@goingToEvents = PersonEvent.find_by_sql ["SELECT * FROM person_events WHERE people_id = ? AND going = ?", userID, 't']
 		render json: @goingToEvents
 	end
 end
