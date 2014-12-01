@@ -411,22 +411,42 @@ asbv3 = Events.create!(
 asbv4 = Events.create!(
 	name: "Free Admission",
 	description: "Come out tonight to see some of the best up and coming comedians!",
-	venue_id: Venue.find(v5.id).id,
+	venue_id: Venue.find(v2.id).id,
 	starts: DateTime.new(2014, 11, 7, 18, 30), 
-	ends: DateTime.new(2014, 11, 7, 123, 0),
+	ends: DateTime.new(2014, 11, 7, 13, 0),
 	num_attending: 0
 )
 
 asbv5 = Events.create!(
 	name: "$3 Shots!",
 	description: "$3 shots for any liquor of your choice",
-	venue_id: Venue.find(v5.id).id,
+	venue_id: Venue.find(v1.id).id,
 	starts: DateTime.new(2014, 7, 5, 10, 40), 
 	ends: DateTime.new(2014, 7, 5, 13, 0),
 	num_attending: 0
 )
 
 BusinessEvent.create!(
-	businesses_id: Business.find(as1.id).id,
-	events_id: Events.find(as2.id).id
+	businesses_id: Business.find(asb1.id).id,
+	events_id: Events.find(asbv1.id).id
+)
+
+BusinessEvent.create!(
+	businesses_id: Business.find(asb2.id).id,
+	events_id: Events.find(asbv2.id).id
+)
+
+BusinessEvent.create!(
+	businesses_id: Business.find(asb3.id).id,
+	events_id: Events.find(asbv3.id).id
+)
+
+BusinessEvent.create!(
+	businesses_id: Business.find(asb4.id).id,
+	events_id: Events.find(asbv4.id).id
+)
+
+BusinessEvent.create!(
+	businesses_id: Business.find(asb5.id).id,
+	events_id: Events.find(asbv5.id).id
 )
