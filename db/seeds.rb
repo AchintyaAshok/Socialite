@@ -344,19 +344,85 @@ PersonEvent.create(
 
 #Abhishek Businesses
 
-as1 = Business.create!(
-	name: "Luciano's",
-	number: "111-111-1111",
-	email: "luciano@socialite.com",
-	address: "Metrotech Center" 
+asb1 = Business.create!(
+	name: "Wafels & Dinges",
+	number: "646-257-2592",
+	email: "dinges@dedinges.com",
+	address: "W 35th St, New York, NY 10001" 
 )
 
-as2 = Events.create!(
-	name: "Luciano Event",
-	description: "Test Luciano Event",
+asb2 = Business.create!(
+	name: "Pacha NYC",
+	number: "212-209-7500",
+	email: "me@pachanyc.com",
+	address: "618 W 46th St, New York, NY 10036"
+)
+
+asb3 = Business.create!(
+	name: "Terminal 5",
+	number: "212-582-6600",
+	email: "info@boweryevents.com",
+	address: "610 W 56th St, New York, NY 10019"
+)
+
+asb4 = Business.create!(
+	name: "Laughing Devil Comedy Club",
+	number: "347-913-3845",
+	email: "contact@laughingdevil.com",
+	address: "47-38 Vernon Blvd, Queens, NY 11101"
+)
+
+asb5 = Business.create!(
+	name: "123 Burger Shot Beer",
+	number: "212-315-0123",
+	email: "info@123burgershotbeer.com",
+	address: "738 10th Ave, New York, NY 10019"
+)
+
+
+
+asbv1 = Events.create!(
+	name: "Free Dinges!",
+	description: "Get up to two free dinges on any wafel that you order.",
 	venue_id: Venue.find(v5.id).id,
 	starts: DateTime.new(2014, 11, 9, 10, 30), 
 	ends: DateTime.new(2014, 11, 9, 13, 0),
+	num_attending: 0
+)
+
+asbv2 = Events.create!(
+	name: "$1 Beers",
+	description: "$1 beers from 10 pm to 11 pm!",
+	venue_id: Venue.find(v4.id).id,
+	starts: DateTime.new(2014, 11, 10, 11, 30), 
+	ends: DateTime.new(2014, 11, 10, 14, 0),
+	num_attending: 0
+)
+
+asbv3 = Events.create!(
+	name: "Discounted Tickets",
+	description: "For a limited time, get 15% off your ticket to see an artist of your choice.",
+	venue_id: Venue.find(v3.id).id,
+	starts: DateTime.new(2014, 12, 9, 10, 30), 
+	ends: DateTime.new(2014, 12, 9, 13, 0),
+	num_attending: 0
+)
+
+asbv4 = Events.create!(
+	name: "Free Admission",
+	description: "Come out tonight to see some of the best up and coming comedians!",
+	venue_id: Venue.find(v5.id).id,
+	starts: DateTime.new(2014, 11, 7, 18, 30), 
+	ends: DateTime.new(2014, 11, 7, 123, 0),
+	num_attending: 0
+)
+
+asbv5 = Events.create!(
+	name: "$3 Shots!",
+	description: "$3 shots for any liquor of your choice",
+	venue_id: Venue.find(v5.id).id,
+	starts: DateTime.new(2014, 7, 5, 10, 40), 
+	ends: DateTime.new(2014, 7, 5, 13, 0),
 	num_attending: 0
 )
 
