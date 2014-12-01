@@ -1,1 +1,10 @@
-welcome to socialite. this page is under construction.
+<!-- IF USER IS NOT LOGGED IN -->
+<div ng-if="!isAuthenticated">
+	user is not logged in.
+</div>
+
+<!-- IF USER IS LOGGED IN -->
+<div ng-if="isAuthenticated">
+	user {{name}} is logged in.
+</div>
+
