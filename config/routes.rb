@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
   devise_for :people
+
+  # devise_for :people, :controllers => {:sessions =>
+  # "sessions", :passwords => "passwords", :registrations =>
+  # "registrations"} do
+  #    get "signup",  :to => "registrations#new", :as => :new_person_registration
+  #    get "login",   :to => "sessions#new"#, :as => :new_person_session
+  #    post "login",  :to => "sessions#new", :as => :person_session
+  #    get "logout",  :to => "devise/sessions#destroy", :as => :destroy_person_session
+  # end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -27,6 +36,13 @@ Rails.application.routes.draw do
   get 'api/people/:id/events'           => 'person#getEvents'
   get 'api/people/:id/events/following' => 'person#getFollowedEvents'
   get 'api/people/:id/events/goingto'   => 'person#getGoingToEvents'
+
+  # Authentication
+  # devise_scope :devise do
+  #   get 'login' => 'sessions#new'  # load the login screen
+  #   post 'login' => 'sessions#create' # authenticate after login credentials
+  #   delete 'logout' => 'sessions#destroy' # logout the person
+  # end
 
   #Venue
   get 'api/venue' => 'venue#index'
