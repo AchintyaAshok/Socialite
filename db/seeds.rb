@@ -52,6 +52,158 @@ vincen = Person.create!(
 )
 vincen.save!
 
+# more fake people!
+p1 = Person.create!(
+	first_name: "Cristopher",
+	last_name: "Jarvis",
+	username: "Upositionots",
+	email: "cjarv@socialite.com",
+	password: "password",
+	password_confirmation: "password"
+)
+p1.save!
+
+p2 = Person.create!(
+	first_name: "Rebecca",
+	last_name: "Cooper",
+	username: "Mosorchat",
+	email: "mosorchat@socialite.com",
+	password: "password",
+	password_confirmation: "password"
+)
+p2.save!
+
+p3 = Person.create!(
+	first_name: "James",
+	last_name: "Sawyer",
+	username: "thecoolguy61",
+	email: "coolguy@socialite.com",
+	password: "password",
+	password_confirmation: "password"
+)
+p3.save!
+
+p4 = Person.create!(
+	first_name: "Kate",
+	last_name: "Austen",
+	username: "evil_lily",
+	email: "kateausten@socialite.com",
+	password: "password",
+	password_confirmation: "password"
+)
+p4.save!
+
+p5 = Person.create!(
+	first_name: "John",
+	last_name: "Locke",
+	username: "wildernesscatcher",
+	email: "johnnyboy@socialite.com",
+	password: "password",
+	password_confirmation: "password"
+)
+p5.save!
+
+p6 = Person.create!(
+	first_name: "Jack",
+	last_name: "Shephard",
+	username: "thedoctor",
+	email: "doc@socialite.com",
+	password: "password",
+	password_confirmation: "password"
+)
+p6.save!
+
+p7 = Person.create!(
+	first_name: "Desmond",
+	last_name: "Hume",
+	username: "welshexplorer",
+	email: "welshguy@socialite.com",
+	password: "password",
+	password_confirmation: "password"
+)
+p7.save!
+
+p8 = Person.create!(
+	first_name: "Hugo",
+	last_name: "Reyes",
+	username: "fatguy65",
+	email: "everyonelovesme@socialite.com",
+	password: "password",
+	password_confirmation: "password"
+)
+p8.save!
+
+p9 = Person.create!(
+	first_name: "Ben",
+	last_name: "Chang",
+	username: "ChangDynastea",
+	email: "changben@socialite.com",
+	password: "password",
+	password_confirmation: "password"
+)
+p9.save!
+
+p10 = Person.create!(
+	first_name: "Jeff",
+	last_name: "Winger",
+	username: "TheLastWord",
+	email: "lawyered@socialite.com",
+	password: "password",
+	password_confirmation: "password"
+)
+p10.save!
+
+p11 = Person.create!(
+	first_name: "Pierce",
+	last_name: "Hawthorne",
+	username: "OldGuyMastermind",
+	email: "oldperson@socialite.com",
+	password: "password",
+	password_confirmation: "password"
+)
+p11.save!
+
+p12 = Person.create!(
+	first_name: "Troy",
+	last_name: "Barnes",
+	username: "childish_gambino",
+	email: "theycallmearapper@socialite.com",
+	password: "password",
+	password_confirmation: "password"
+)
+p12.save!
+
+p13 = Person.create!(
+	first_name: "Britta",
+	last_name: "Perry",
+	username: "idopsychology",
+	email: "psychmajor@socialite.com",
+	password: "password",
+	password_confirmation: "password"
+)
+p13.save!
+
+p14 = Person.create!(
+	first_name: "Ron",
+	last_name: "Swanson",
+	username: "i_make_chairs",
+	email: "hunter_wildernessman@socialite.com",
+	password: "password",
+	password_confirmation: "password"
+)
+p14.save!
+
+p15 = Person.create!(
+	first_name: "Leslie",
+	last_name: "Knope",
+	username: "dontsayknope!",
+	email: "knope@socialite.com",
+	password: "password",
+	password_confirmation: "password"
+)
+p15.save!
+
+
 # Creating some venues (real data from yelp)
 v1 = Venue.create!(
 	  name: 'Prospect Park Brooklyn',
