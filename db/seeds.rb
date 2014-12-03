@@ -210,7 +210,7 @@ e1 = Events.create!(
 	venue_id: Venue.find(v1.id).id,
 	starts: DateTime.new(2014, 11, 9, 22, 30), #10:30pm at night
 	ends: DateTime.new(2014, 11, 10, 3, 0),
-	num_attending: 1
+	num_attending: 3
 )
 e1.save!
 
@@ -285,6 +285,12 @@ PersonEvent.create(
 )
 PersonEvent.create(
 	people_id: Person.find(achinty.id).id,
+	events_id: Events.find(e1.id).id,
+	following: true,
+	going: true
+)
+PersonEvent.create(
+	people_id: Person.find(achinty.id).id,
 	events_id: Events.find(e4.id).id,
 	following: true,
 	going: true
@@ -297,12 +303,26 @@ PersonEvent.create(
 )
 PersonEvent.create(
 	people_id: Person.find(abhishe.id).id,
+	events_id: Events.find(e1.id).id,
+	following: true,
+	going: true
+)
+PersonEvent.create(
+	people_id: Person.find(abhishe.id).id,
 	events_id: Events.find(e6.id).id,
 	following: true,
 	going: false
 )
 
+Friend.create(
+	person_id: Person.find(aart.id).id,
+	friend_id: Person.find(achinty.id).id
+)
 
+Friend.create(
+	person_id: Person.find(aart.id).id,
+	friend_id: Person.find(abhishe.id).id
+)
 # # User Events -- Events that users have chosen to follow or join:
 # UserEvents.create(
 # 	users_id: Users.find(aarti.id).id,
