@@ -29,7 +29,7 @@ class PersonController < ApplicationController
 	def search
 		searchStr = params[:searchString]
 		searchStr = "%" + searchStr + "%"
-		@users = Person.find_by_sql ["SELECT * FROM users WHERE username LIKE ?", searchStr]
+		@users = Person.find_by_sql ["SELECT * FROM people WHERE username LIKE ?", searchStr]
 		render json: @users
 	end
 
