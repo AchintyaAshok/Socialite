@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'api/events/search/:searchString' => 'events#search' # allows searching by a string for events
   #CRUD operations for events
   get 'api/create/events/:person_id/:name/:description/:venue_id/:starts/:ends' => 'events#create', :starts => /.*/, :ends => /.*/
+  post 'api/create/events' => 'events#create' # you must pass in person_id along with the required events stuff
   get 'api/update/follow/:person_id/:events_id/:is_following' => 'events#updateFollowing'
   get 'api/update/going/:person_id/:events_id/:is_going' => 'events#updateGoing'
 
@@ -44,6 +45,7 @@ Rails.application.routes.draw do
 
   #CRUD operations for venue
   get 'api/create/venue/:name/:yelp_Id/:lat/:long/:address/:phone' => 'venue#create', :lat => /.*/, :long => /.*/
+  post 'api/create/venue' => 'venue#create'
 
   #yelp api calls
   get 'api/yelp/search/:lat/:long'  => 'application#searchByLatLong', :lat => /.*/, :long => /.*/
