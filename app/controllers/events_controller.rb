@@ -38,7 +38,7 @@ class EventsController < ApplicationController
 		PersonEvent.create(
 			people_id: params[:person_id],
 			events_id: event.id,
-			following: false,
+			following: true,
 			going: true
 		)
 		render json: "Success"
