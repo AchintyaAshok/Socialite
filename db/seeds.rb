@@ -508,7 +508,6 @@ Friend.create(
 	person_id: Person.find(aart.id).id,
 	friend_id: Person.find(abhishe.id).id
 )
-
 asb1 = Business.create!(
 	name: "Wafels & Dinges",
 	number: "646-257-2592",
