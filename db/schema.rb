@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141203205910) do
+ActiveRecord::Schema.define(version: 20141205171536) do
 
   create_table "business_events", force: true do |t|
     t.datetime "created_at"
@@ -38,10 +38,11 @@ ActiveRecord::Schema.define(version: 20141203205910) do
     t.datetime "ends"
     t.integer  "venue_id"
     t.integer  "num_attending"
-    t.boolean  "business_created", default: false, null: false
+    t.boolean  "business_created", default: false,  null: false
     t.integer  "business_id",      default: 0
     t.integer  "person_id",        default: 0
-    t.integer  "privacy",          default: 0,     null: false
+    t.integer  "privacy",          default: 0,      null: false
+    t.string   "main_image_url",   default: "null"
   end
 
   create_table "friends", force: true do |t|
@@ -52,11 +53,11 @@ ActiveRecord::Schema.define(version: 20141203205910) do
   end
 
   create_table "people", force: true do |t|
-    t.string   "first_name",                          null: false
-    t.string   "last_name",              default: "", null: false
-    t.string   "username",                            null: false
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "first_name",                              null: false
+    t.string   "last_name",              default: "",     null: false
+    t.string   "username",                                null: false
+    t.string   "email",                  default: "",     null: false
+    t.string   "encrypted_password",     default: "",     null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -67,6 +68,7 @@ ActiveRecord::Schema.define(version: 20141203205910) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "profile_image_url",      default: "null"
   end
 
   add_index "people", ["email"], name: "index_people_on_email", unique: true
