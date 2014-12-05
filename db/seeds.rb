@@ -245,7 +245,7 @@ v3 = Venue.create!(
       yelp_Id: 'brooklyn-heights-promenade-brooklyn',
       lat: 40.6994286,
       long: -73.9957886,
-      address: 'Columbia Heights, Brooklyn Heights, Brooklyn, NY 11201',
+      address: 'Columbia Heights, Brooklyn, NY 11201',
       phone: '',
 )
 v3.save!
@@ -265,7 +265,7 @@ v5 = Venue.create!(
       yelp_Id: 'rockefeller-center-new-york',
       lat: 40.758716632613,
       long: -73.9785325527191,
-      address: '30 Rockefeller Plz, Midtown West, New York, NY 10012',
+      address: '30 Rockefeller Plz, New York, NY 10012',
       phone: '+1-212-632-3975',
 )
 v5.save!
@@ -275,7 +275,7 @@ v6 = Venue.create!(
 	yelp_Id: 'phebes-new-york',
     lat: 40.7268219,
   	long: -73.9912796,
-  	address: '359 Bowery St, East Village, New York, NY 10003',
+  	address: '359 Bowery St, New York, NY 10003',
   	phone: '+1-212-358-1902',
 )
 v6.save!
@@ -285,7 +285,7 @@ v7 = Venue.create!(
 	yelp_Id: 'petite-abeille-new-york-3',
     lat: 40.738636,
   	long: -73.994514,
-  	address: '44 W 17th St, Flatiron, New York, NY 10011',
+  	address: '44 W 17th St, New York, NY 10011',
   	phone: '+1-212-727-2989',
 )
 v7.save!
@@ -305,7 +305,7 @@ v9 = Venue.create!(
 	yelp_Id: 'webster-hall-new-york',
     lat: 40.7316609,
   	long: -73.9891926,
-  	address: '125 E 11th St, East Village, New York, NY 10003',
+  	address: '125 E 11th St, New York, NY 10003',
   	phone: '+1-212-353-1600',
 )
 v9.save!
@@ -315,7 +315,7 @@ v10 = Venue.create!(
 	yelp_Id: 'barnes-and-noble-new-york-3',
     lat: 40.737148,
   	long: -73.989403,
-  	address: 'Union Square, 33 E 17th St, Flatiron, New York, NY 10003',
+  	address: '33 E 17th St, New York, NY 10003',
   	phone: '+1-212-253-0810',
 )
 v10.save!
@@ -325,7 +325,7 @@ v11 = Venue.create!(
 	yelp_Id: 'bathtub-gin-new-york',
     lat: 40.7436723627234,
   	long: -74.0033376216888,
-  	address: '132 9th Ave, Chelsea, New York, NY 10011',
+  	address: '132 9th Ave, New York, NY 10011',
   	phone: '+1-646-559-1671',
 )
 v11.save!
@@ -335,7 +335,7 @@ v12 = Venue.create!(
 	yelp_Id: '230-fifth-new-york',
     lat: 40.743988,
   	long: -73.9879837,
-  	address: '230 5th Ave, Flatiron, New York, NY 10001',
+  	address: '230 5th Ave, New York, NY 10001',
   	phone: '+1-212-725-4300',
 )
 v12.save!
@@ -345,7 +345,7 @@ v13 = Venue.create!(
 	yelp_Id: 'picnic-garden-flushing',
     lat: 40.7650292743955,
   	long: -73.8176979124546,
-  	address: '14742 Northern Blvd, Flushing, Flushing, NY 11354',
+  	address: '14742 Northern Blvd, Flushing, NY 11354',
   	phone: '+1-718-358-5959',
 )
 v13.save!
@@ -428,7 +428,9 @@ e7 = Events.create!(
 	venue_id: Venue.find(v9.id).id,
 	starts: DateTime.new(2014, 11, 9, 10, 30), 
 	ends: DateTime.new(2014, 11, 9, 13, 0),
-	num_attending: 0
+	num_attending: 0,
+	business_created: true,
+	business_id: Business.find(b1.id).id
 )
 e7.save!
 
@@ -438,7 +440,10 @@ e8 = Events.create!(
 	venue_id: Venue.find(v13.id).id,
 	starts: DateTime.new(2014, 11, 9, 10, 30), 
 	ends: DateTime.new(2014, 11, 9, 13, 0),
-	num_attending: 0
+	num_attending: 0,
+	business_created: false,
+	business_id: 0,
+	person_id: 1
 )
 e8.save!
 
@@ -499,6 +504,8 @@ PersonEvent.create(
 )
 
 # Friends
+
+#Aarti's friends
 Friend.create(
 	person_id: Person.find(aart.id).id,
 	friend_id: Person.find(achinty.id).id
@@ -507,6 +514,16 @@ Friend.create(
 Friend.create(
 	person_id: Person.find(aart.id).id,
 	friend_id: Person.find(abhishe.id).id
+)
+
+Friend.
+
+
+
+#Achintya's friends
+Friend.create(
+	person_id: Person.find(achtiny.id).id,
+	friend_id: Person.find(aart.id).id
 )
 
 asb1 = Business.create!(
