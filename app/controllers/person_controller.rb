@@ -12,13 +12,6 @@ class PersonController < ApplicationController
 	'''
 	def show
 		@user = Person.find_by_sql ["SELECT * FROM people WHERE id = ?", params[:id]]
-		
-		# connection = ActiveRecord::Base.connection.raw_connection
-		# connection.prepare('query_statement', "SELECT * FROM people WHERE id = $1")
-		# st = connection.exec_prepared('query_statement', params[:id])
-		
-		# puts st
-
 		render json: @user
 	end
 

@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'privacy'     => 'application_navigator#privacy'
   get 'help'        => 'application_navigator#help'
   get 'signout'     => 'application_navigator#signOut'
+  get 'accountsettings' => 'application_navigator#accountSettings'
   
   # API calls
   ## Events
