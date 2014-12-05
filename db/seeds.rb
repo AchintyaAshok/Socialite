@@ -203,6 +203,21 @@ p15 = Person.create!(
 )
 p15.save!
 
+# Businesses
+b1 = Business.create!(
+	name: "Webster Hall Entertainment Corp.",
+	number: "212-553-1600",
+	email: "info@websterhall.com",
+	address: "125 East 11th Street, New York, NY 10003"
+)
+
+as1 = Business.create!(
+	name: "Luciano's",
+	number: "111-111-1111",
+	email: "luciano@socialite.com",
+	address: "Metrotech Center" 
+)
+
 
 # Creating some venues (real data from yelp)
 v1 = Venue.create!(
@@ -261,7 +276,9 @@ e1 = Events.create!(
 	venue_id: Venue.find(v1.id).id,
 	starts: DateTime.new(2014, 11, 9, 22, 30), #10:30pm at night
 	ends: DateTime.new(2014, 11, 10, 3, 0),
-	num_attending: 1
+	num_attending: 2,
+	person_id: Person.find(aart.id).id, # creator of the event
+	privacy: "isFriends"
 )
 e1.save!
 
@@ -271,7 +288,9 @@ e2 = Events.create!(
 	venue_id: Venue.find(v2.id).id,
 	starts: DateTime.new(2014, 11, 9, 20, 0),
 	ends: DateTime.new(2014, 11, 9, 23, 0),
-	num_attending: 1
+	num_attending: 1,
+	business_created: true,
+	business_id: Business.find(b1.id).id
 )
 e2.save!
 
@@ -281,7 +300,9 @@ e3 = Events.create!(
 	venue_id: Venue.find(v4.id).id,
 	starts: DateTime.new(2014, 11, 9, 17, 30), 
 	ends: DateTime.new(2014, 11, 9, 20, 0),
-	num_attending: 0
+	num_attending: 0,
+	business_created: true,
+	business_id: Business.find(b1.id).id
 )
 e3.save!
 
@@ -291,7 +312,9 @@ e4 = Events.create!(
 	venue_id: Venue.find(v3.id).id,
 	starts: DateTime.new(2014, 11, 9, 18, 0),
 	ends: DateTime.new(2014, 11, 9, 23, 59),
-	num_attending: 1
+	num_attending: 1,
+	business_created: true,
+	business_id: Business.find(b1.id).id
 )
 e4.save!
 
@@ -301,7 +324,9 @@ e5 = Events.create!(
 	venue_id: Venue.find(v4.id).id,
 	starts: DateTime.new(2014, 11, 9, 11, 0),
 	ends: DateTime.new(2014, 11, 9, 14, 0),
-	num_attending: 0
+	num_attending: 0,
+	business_created: true,
+	business_id: Business.find(b1.id).id
 )
 e5.save!
 
@@ -311,13 +336,21 @@ e6 = Events.create!(
 	venue_id: Venue.find(v5.id).id,
 	starts: DateTime.new(2014, 11, 9, 10, 30), 
 	ends: DateTime.new(2014, 11, 9, 13, 0),
-	num_attending: 0
+	num_attending: 0,
+	business_created: true,
+	business_id: Business.find(b1.id).id
 )
 e6.save!
 
 # User Events -- Events that users have chosen to follow or join:
 PersonEvent.create(
 	people_id: Person.find(aart.id).id,
+	events_id: Events.find(e1.id).id,
+	following: true,
+	going: true
+)
+PersonEvent.create(
+	people_id: Person.find(achinty.id).id,
 	events_id: Events.find(e1.id).id,
 	following: true,
 	going: true
@@ -351,14 +384,6 @@ PersonEvent.create(
 	events_id: Events.find(e6.id).id,
 	following: true,
 	going: false
-)
-
-# Businesses
-as1 = Business.create!(
-	name: "Luciano's",
-	number: "111-111-1111",
-	email: "luciano@socialite.com",
-	address: "Metrotech Center" 
 )
 
 as2 = Events.create!(

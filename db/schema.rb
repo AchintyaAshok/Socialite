@@ -38,9 +38,10 @@ ActiveRecord::Schema.define(version: 20141203205910) do
     t.datetime "ends"
     t.integer  "venue_id"
     t.integer  "num_attending"
-    t.boolean  "business_created", default: true, null: false
-    t.integer  "business_id"
-    t.integer  "person_id"
+    t.boolean  "business_created", default: false, null: false
+    t.integer  "business_id",      default: 0
+    t.integer  "person_id",        default: 0
+    t.integer  "privacy",          default: 0,     null: false
   end
 
   create_table "people", force: true do |t|

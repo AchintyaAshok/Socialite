@@ -1,5 +1,4 @@
 class VenueController < ApplicationController
-
 	'''
 		Returns all venues
 	'''
