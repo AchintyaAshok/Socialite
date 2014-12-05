@@ -2,3 +2,73 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+/* FOR FOOTER PAGES */
+h1.sl-event-title{
+	text-align: center;
+	color:#FC4957;
+}
+
+h3.sl-event-sec{
+	color:#5858FB;
+	text-align: center;
+}
+
+div.sl-event-info{
+	width:100%;
+	overflow:visible;
+	padding:20px;
+	background-color:#CAF7F1;
+}
+
+p.sl-event-description{
+	text-align: center;
+	font-weight: 300;
+}
+
+p.sl-event-venue a, p.sl-event-venue a:visited{	
+	font-weight: 600;
+	color:#000;	
+}
+
+p.sl-event-venue {
+	text-align: center;
+}
+
+p.sl-event-venue a:hover{
+	color:#5858FB;
+}
+
+h4.sl-event-time{
+	font-weight: 800;
+	margin: 0px;
+	text-align: center;
+}
+
+p.sl-event-time{
+	text-align: center;
+}
+
+div.sl-event-icons{
+	text-align: center;
+	font-size: 40pt;
+}
+
+div.sl-event-attend, div.sl-event-follow{
+	margin:20px 0px;
+	color:#5858FB;
+}
+
+div.sl-event-time{
+	margin:10px 0px;
+}
+
+div.sl-event-num-attending{
+	margin-top:10px;
+	font-size: 20pt;
+	text-align: center;
+}
+
+span.sl-event-num-attending{
+	font-weight: 600;
+}

@@ -10,13 +10,13 @@ var eventModule = angular.module('getEvent', [
 
 eventModule.config(['$routeProvider', 
 	function($routeProvider){
-		$routeProvider.when("/", {
-			templateUrl: '../templates/homepage.html',
-			controller: 'HomepageController'
+		$routeProvider.when("/events", {
+			templateUrl: '../templates/event.html',
+			controller: 'getEventController'
 		});
 		$routeProvider.otherwise({
-			templateUrl: '../templates/homepage.html',
-			controller: 'HomepageController'
+			templateUrl: '../templates/event.html',
+			controller: 'getEventController'
 		});
 	}
 ]);

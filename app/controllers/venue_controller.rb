@@ -1,5 +1,4 @@
 class VenueController < ApplicationController
-
 	'''
 		Returns all venues
 	'''
@@ -19,5 +18,20 @@ class VenueController < ApplicationController
 		searchStr = "%" + searchStr + "%"
 		@venues = Venue.find_by_sql ["SELECT * FROM venues WHERE name LIKE ?", searchStr]
 		render json: @venues
+	end
+
+	def create
+		#api/create/venue/:name/:yelp_Id/:lat/:long/:address/:phone
+		venue = Venue.create!(
+			name: params[:name],
+			yelp_Id: params[:yelp_Id],
+			lat: params[:lat],
+			long: params[:long],
+			address: params[:address],
+			phone: params[:phone]
+		)
+		venue.save!
+		
+		render json: "Success"
 	end
 end

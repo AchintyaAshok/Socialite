@@ -12,13 +12,6 @@ class PersonController < ApplicationController
 	'''
 	def show
 		@user = Person.find_by_sql ["SELECT * FROM people WHERE id = ?", params[:id]]
-		
-		# connection = ActiveRecord::Base.connection.raw_connection
-		# connection.prepare('query_statement', "SELECT * FROM people WHERE id = $1")
-		# st = connection.exec_prepared('query_statement', params[:id])
-		
-		# puts st
-
 		render json: @user
 	end
 
@@ -29,7 +22,7 @@ class PersonController < ApplicationController
 	def search
 		searchStr = params[:searchString]
 		searchStr = "%" + searchStr + "%"
-		@users = Person.find_by_sql ["SELECT * FROM users WHERE username LIKE ?", searchStr]
+		@users = Person.find_by_sql ["SELECT DISTINCT * FROM people WHERE username LIKE ? OR first_name LIKE ? OR last_name LIKE ?", searchStr, searchStr, searchStr]
 		render json: @users
 	end
 
@@ -69,4 +62,23 @@ class PersonController < ApplicationController
 		@goingToEvents = PersonEvent.find_by_sql ["SELECT * FROM person_events WHERE people_id = ? AND going = ?", userID, 't']
 		render json: @goingToEvents
 	end
+
+	def followEvent
+		#puts "Person logged in: #{current_person[:username]}"
+		personID = params[:person_id]
+		eventID = params[:event_id]
+		event = Events.find(eventID)
+		#puts "Privacy Level: #{event[:privacy]}"
+		if event[:privacy] == 0 # 0 is public for this enumerated value
+			con = ActiveRecord::Base.connection.raw_connection
+			#puts "Connection: #{con}"
+			#query = "INSERT INTO person_events (people_id, events_id) VALUES ($1, $2)"
+			con.prepare('exec_query', "INSERT INTO person_events (people_id, events_id) VALUES ($1, $2)")
+			st = con.exec_prepared('exec_query', [personID, eventID])
+		else
+			puts "Cannot insert because this event is not public"
+		end
+		puts "#{Person.find(personID).username} wishes to follow #{Events.find(eventID).name}"
+	end
+
 end
