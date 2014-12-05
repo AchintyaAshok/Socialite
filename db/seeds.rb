@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
@@ -508,6 +509,13 @@ Friend.create(
 	person_id: Person.find(aart.id).id,
 	friend_id: Person.find(abhishe.id).id
 )
+
+#Achintya's friends
+Friend.create(
+	person_id: Person.find(achtiny.id).id,
+	friend_id: Person.find(aart.id).id
+)
+
 asb1 = Business.create!(
 	name: "Wafels & Dinges",
 	number: "646-257-2592",
