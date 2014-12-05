@@ -508,3 +508,120 @@ Friend.create(
 	person_id: Person.find(aart.id).id,
 	friend_id: Person.find(abhishe.id).id
 )
+
+asb1 = Business.create!(
+	name: "Wafels & Dinges",
+	number: "646-257-2592",
+	email: "dinges@dedinges.com",
+	address: "W 35th St, New York, NY 10001" 
+)
+
+asb2 = Business.create!(
+	name: "Pacha NYC",
+	number: "212-209-7500",
+	email: "me@pachanyc.com",
+	address: "618 W 46th St, New York, NY 10036"
+)
+
+asb3 = Business.create!(
+	name: "Terminal 5",
+	number: "212-582-6600",
+	email: "info@boweryevents.com",
+	address: "610 W 56th St, New York, NY 10019"
+)
+
+asb4 = Business.create!(
+	name: "Laughing Devil Comedy Club",
+	number: "347-913-3845",
+	email: "contact@laughingdevil.com",
+	address: "47-38 Vernon Blvd, Queens, NY 11101"
+)
+
+asb5 = Business.create!(
+	name: "123 Burger Shot Beer",
+	number: "212-315-0123",
+	email: "info@123burgershotbeer.com",
+	address: "738 10th Ave, New York, NY 10019"
+)
+
+
+
+asbv1 = Events.create!(
+	name: "Free Dinges!",
+	description: "Get up to two free dinges on any wafel that you order.",
+	venue_id: Venue.find(v5.id).id,
+	starts: DateTime.new(2014, 11, 9, 10, 30), 
+	ends: DateTime.new(2014, 11, 9, 13, 0),
+	num_attending: 0,
+	business_created: true,
+	business_id: Business.find(asb1.id).id
+)
+
+asbv2 = Events.create!(
+	name: "$1 Beers",
+	description: "$1 beers from 10 pm to 11 pm!",
+	venue_id: Venue.find(v4.id).id,
+	starts: DateTime.new(2014, 11, 10, 11, 30), 
+	ends: DateTime.new(2014, 11, 10, 14, 0),
+	num_attending: 0,
+	business_created: true,
+	business_id: Business.find(asb2.id).id
+)
+
+asbv3 = Events.create!(
+	name: "Discounted Tickets",
+	description: "For a limited time, get 15% off your ticket to see an artist of your choice.",
+	venue_id: Venue.find(v3.id).id,
+	starts: DateTime.new(2014, 12, 9, 10, 30), 
+	ends: DateTime.new(2014, 12, 9, 13, 0),
+	num_attending: 0,
+	business_created: true,
+	business_id: Business.find(asb3.id).id
+)
+
+asbv4 = Events.create!(
+	name: "Free Admission",
+	description: "Come out tonight to see some of the best up and coming comedians!",
+	venue_id: Venue.find(v2.id).id,
+	starts: DateTime.new(2014, 11, 7, 18, 30), 
+	ends: DateTime.new(2014, 11, 7, 13, 0),
+	num_attending: 0,
+	business_created: true,
+	business_id: Business.find(asb4.id).id
+)
+
+asbv5 = Events.create!(
+	name: "$3 Shots!",
+	description: "$3 shots for any liquor of your choice",
+	venue_id: Venue.find(v1.id).id,
+	starts: DateTime.new(2014, 7, 5, 10, 40), 
+	ends: DateTime.new(2014, 7, 5, 13, 0),
+	num_attending: 0,
+	business_created: true,
+	business_id: Business.find(asb5.id).id
+)
+
+BusinessEvent.create!(
+	businesses_id: Business.find(asb1.id).id,
+	events_id: Events.find(asbv1.id).id
+)
+
+BusinessEvent.create!(
+	businesses_id: Business.find(asb2.id).id,
+	events_id: Events.find(asbv2.id).id
+)
+
+BusinessEvent.create!(
+	businesses_id: Business.find(asb3.id).id,
+	events_id: Events.find(asbv3.id).id
+)
+
+BusinessEvent.create!(
+	businesses_id: Business.find(asb4.id).id,
+	events_id: Events.find(asbv4.id).id
+)
+
+BusinessEvent.create!(
+	businesses_id: Business.find(asb5.id).id,
+	events_id: Events.find(asbv5.id).id
+)
