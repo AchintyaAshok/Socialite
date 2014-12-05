@@ -28,6 +28,11 @@ Rails.application.routes.draw do
   get 'api/events/:id' => 'events#show'
   get 'api/eventsVenue/:venue_id' => 'events#searchVenue' # searches for events that happen at a specific venue
   get 'api/events/search/:searchString' => 'events#search' # allows searching by a string for events
+  #CRUD operations for events
+  get 'api/create/events/:person_id/:name/:description/:venue_id/:starts/:ends' => 'events#create', :starts => /.*/, :ends => /.*/
+  post 'api/create/events' => 'events#create' # you must pass in person_id along with the required events stuff
+  get 'api/update/follow/:person_id/:events_id/:is_following' => 'events#updateFollowing'
+  get 'api/update/going/:person_id/:events_id/:is_going' => 'events#updateGoing'
 
   ## People
   get 'api/people'                      => 'person#index'
@@ -45,10 +50,19 @@ Rails.application.routes.draw do
   #   delete 'logout' => 'sessions#destroy' # logout the person
   # end
 
-  #Venue
+  ## Friends
+  get 'api/friends' => 'friend#index'
+  get 'api/friends/:id' => 'friend#show'
+  get 'api/friends/:id/:event_id' => 'friend#getFriends' #returns friends going to an event
+
+  ## Venue
   get 'api/venue' => 'venue#index'
   get 'api/venue/:id' => 'venue#show'
   get 'api/venue/search/:searchString' => 'venue#search'
+
+  #CRUD operations for venue
+  get 'api/create/venue/:name/:yelp_Id/:lat/:long/:address/:phone' => 'venue#create', :lat => /.*/, :long => /.*/
+  post 'api/create/venue' => 'venue#create'
 
   #yelp api calls
   get 'api/yelp/search/:lat/:long'  => 'application#searchByLatLong', :lat => /.*/, :long => /.*/
@@ -59,6 +73,8 @@ Rails.application.routes.draw do
   
   #instagram api
   get 'api/instagram/search/:lat/:long' => 'application#searchForPictures', :lat => /.*/, :long => /.*/
+  get 'api/instagram/id/search/:venue_id' => 'application#searchForPicturesByVenueId'
+  get 'api/instagram/tag/search/:tag'   => 'application#searchByTag'
 
 
   ## Business

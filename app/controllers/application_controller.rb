@@ -41,7 +41,29 @@ class ApplicationController < ActionController::Base
   #instagram
   def searchForPictures
     @images = Array.new
-    for media_item in Instagram.media_search(params[:lat], params[:long], {distance: 100})
+    for media_item in Instagram.media_search(params[:lat], params[:long], {distance: 50})
+      @images << media_item.images.standard_resolution.url
+    end
+    render json: @images
+  end
+
+  def searchForPicturesByVenueId
+    @images = Array.new
+    @venues = Venue.find_by_sql ["SELECT * FROM venues WHERE id = ?", params[:venue_id]]
+    if !@venues.blank?
+      @lat = @venues[0].lat
+      @long = @venues[0].long
+      for media_item in Instagram.media_search(@lat, @long, {distance: 50})
+        @images << media_item.images.standard_resolution.url
+      end
+    end
+    render json: @images
+  end
+
+  def searchByTag
+    @images = Array.new
+    tags = Instagram.tag_search(params[:tag])
+    for media_item in Instagram.tag_recent_media(tags[0].name)
       @images << media_item.images.standard_resolution.url
     end
     render json: @images

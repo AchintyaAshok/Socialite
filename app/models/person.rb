@@ -7,4 +7,5 @@ class Person < ActiveRecord::Base
 
   has_many :person_events, :dependent => :destroy
   has_many :events, :through => :person_events
+  has_many :friends
 end
