@@ -62,4 +62,23 @@ class PersonController < ApplicationController
 		@goingToEvents = PersonEvent.find_by_sql ["SELECT * FROM person_events WHERE people_id = ? AND going = ?", userID, 't']
 		render json: @goingToEvents
 	end
+
+	def followEvent
+		#puts "Person logged in: #{current_person[:username]}"
+		personID = params[:person_id]
+		eventID = params[:event_id]
+		event = Events.find(eventID)
+		#puts "Privacy Level: #{event[:privacy]}"
+		if event[:privacy] == 0 # 0 is public for this enumerated value
+			con = ActiveRecord::Base.connection.raw_connection
+			#puts "Connection: #{con}"
+			#query = "INSERT INTO person_events (people_id, events_id) VALUES ($1, $2)"
+			con.prepare('exec_query', "INSERT INTO person_events (people_id, events_id) VALUES ($1, $2)")
+			st = con.exec_prepared('exec_query', [personID, eventID])
+		else
+			puts "Cannot insert because this event is not public"
+		end
+		puts "#{Person.find(personID).username} wishes to follow #{Events.find(eventID).name}"
+	end
+
 end

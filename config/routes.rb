@@ -21,7 +21,6 @@ Rails.application.routes.draw do
   get 'privacy'     => 'application_navigator#privacy'
   get 'help'        => 'application_navigator#help'
   get 'signout'     => 'application_navigator#signOut'
-  get 'accountsettings' => 'application_navigator#accountSettings'
   
   # API calls
   ## Events
@@ -37,6 +36,7 @@ Rails.application.routes.draw do
   get 'api/people/:id/events'           => 'person#getEvents'
   get 'api/people/:id/events/following' => 'person#getFollowedEvents'
   get 'api/people/:id/events/goingto'   => 'person#getGoingToEvents'
+  get 'api/people/:person_id/events/:event_id/follow' => 'person#followEvent'
 
   # Authentication
   # devise_scope :devise do
