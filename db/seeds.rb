@@ -428,9 +428,7 @@ e7 = Events.create!(
 	venue_id: Venue.find(v9.id).id,
 	starts: DateTime.new(2014, 11, 9, 10, 30), 
 	ends: DateTime.new(2014, 11, 9, 13, 0),
-	num_attending: 0,
-	business_created: true,
-	business_id: Business.find(b1.id).id
+	num_attending: 0
 )
 e7.save!
 
@@ -440,10 +438,7 @@ e8 = Events.create!(
 	venue_id: Venue.find(v13.id).id,
 	starts: DateTime.new(2014, 11, 9, 10, 30), 
 	ends: DateTime.new(2014, 11, 9, 13, 0),
-	num_attending: 0,
-	business_created: false,
-	business_id: 0,
-	person_id: 1
+	num_attending: 0
 )
 e8.save!
 
@@ -512,8 +507,14 @@ Friend.create(
 Friend.create(
 	person_id: Person.find(aart.id).id,
 	friend_id: Person.find(abhishe.id).id
-
 )
+
+#Achintya's friends
+Friend.create(
+	person_id: Person.find(achtiny.id).id,
+	friend_id: Person.find(aart.id).id
+)
+
 asb1 = Business.create!(
 	name: "Wafels & Dinges",
 	number: "646-257-2592",
