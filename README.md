@@ -1,4 +1,5 @@
-# SocialiteV2 -- Software Engineering
+# Socialite
+Where you and your friends can find events that you all like
 
 ## Instructions
 1. Download the repository using Git pull (look up how to do this on the github wiki)
